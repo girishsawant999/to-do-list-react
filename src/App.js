@@ -1,24 +1,52 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import AddTask from './Components/AddTask';
+import Task from './Components/Task';
+import uuid from 'react-uuid';
 
 function App() {
+  const [tasks, settasks] = React.useState(
+    localStorage.getItem('tasks')
+      ? JSON.parse(localStorage.getItem('tasks'))
+      : []
+  );
+
+  const addTask = (task) => {
+    let new_task = [
+      ...tasks,
+      {
+        id: uuid(),
+        value: task,
+        status: true,
+      },
+    ];
+
+    settasks(new_task);
+    localStorage.setItem('tasks', JSON.stringify(new_task));
+  };
+
+  const deleteTask = (id) => {
+    let new_task = tasks.filter((task) => task.id !== id);
+    settasks(new_task);
+    localStorage.setItem('tasks', JSON.stringify(new_task));
+  };
+
+  const changeStatus = (id) => {
+    let new_task = tasks.map((task) => {
+      if (task.id === id) {
+        task.status = !task.status;
+      }
+      return task;
+    });
+    settasks(new_task);
+    localStorage.setItem('tasks', JSON.stringify(new_task));
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AddTask addTask={addTask} />
+      {tasks.map((task) => (
+        <Task task={task} deleteTask={deleteTask} changeStatus={changeStatus} />
+      ))}
     </div>
   );
 }
