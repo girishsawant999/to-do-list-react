@@ -44,9 +44,15 @@ function App() {
   return (
     <div className="App">
       <AddTask addTask={addTask} />
-      {tasks.map((task) => (
-        <Task task={task} deleteTask={deleteTask} changeStatus={changeStatus} />
-      ))}
+      <div className="app__tasks">
+        {tasks.map((task) => (
+          <Task
+            task={task}
+            deleteTask={deleteTask}
+            changeStatus={changeStatus}
+          />
+        ))}
+      </div>
     </div>
   );
 }

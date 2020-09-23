@@ -3,4 +3,16 @@
   align-items: center;
   justify-content: center;
   align-content: space-between;
+  width: 95%;
+  margin: auto;
+}
+.task .task__status {
+  flex: 0.1;
+}
+.task label {
+  flex: 0.7;
+  display: flex;
+}
+.task .task__delete {
+  flex: 0.2;
 }

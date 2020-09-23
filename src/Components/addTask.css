@@ -1,2 +1,24 @@
 .addTask {
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  padding: 10px;
+  background: #dcdcdc;
+  height: 30px;
+}
+.addTask form {
+  display: flex;
+}
+.addTask form input {
+  flex: 0.6;
+  margin: 0px 10px;
+}
+.addTask form button {
+  flex: 0.4 1;
+  max-width: 140px;
+  min-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
 }

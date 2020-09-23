@@ -17,7 +17,7 @@ function Task({ task, deleteTask, changeStatus }) {
         <div className="task__value">{task.value}</div>
       </label>
       <div className="task__delete" onClick={() => deleteTask(task.id)}>
-        Delete
+        <span class="material-icons">delete_forever</span>
       </div>
     </div>
   );
