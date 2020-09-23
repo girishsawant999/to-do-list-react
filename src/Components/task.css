@@ -5,14 +5,31 @@
   align-content: space-between;
   width: 95%;
   margin: auto;
+  padding: 2px 0px;
 }
 .task .task__status {
   flex: 0.1;
+  color: green;
 }
-.task label {
+.task .task__value {
   flex: 0.7;
   display: flex;
+  text-transform: capitalize;
 }
 .task .task__delete {
-  flex: 0.2;
+  flex: 0.2 1;
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.task .task__delete span {
+  cursor: pointer;
+  transition: transform 100ms ease-in-out;
+}
+.task .task__delete span:hover {
+  transform: scale(1.2);
+}
+.task__hr {
+  width: 90vw;
 }

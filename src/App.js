@@ -17,7 +17,7 @@ function App() {
       {
         id: uuid(),
         value: task,
-        status: true,
+        status: false,
       },
     ];
 

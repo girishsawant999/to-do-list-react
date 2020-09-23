@@ -1,8 +1,31 @@
+@font-face {
+  font-family: 'Ubantu';
+  src: url('./Ubuntu-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
 .App {
   text-align: center;
   overflow: hidden;
+  font-family: 'Ubantu';
 }
 .App .app__tasks {
   overflow: auto;
   margin-top: 55px;
+}
+.text-line-through {
+  text-decoration: line-through;
+}
+.color-green {
+  color: green;
+}
+.color-red {
+  color: red;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.disable-select {
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
 }

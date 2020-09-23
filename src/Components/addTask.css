@@ -10,15 +10,34 @@
   display: flex;
 }
 .addTask form input {
-  flex: 0.6;
+  flex: 0.6 1;
   margin: 0px 10px;
+  border: none;
+  border-bottom: 2px solid green;
+  padding: 0px 10px;
+  outline: none;
+  border-radius: 10px;
+  font-family: 'Ubantu';
+  font-weight: 600;
 }
 .addTask form button {
+  font-family: 'Ubantu';
+  font-weight: 600;
   flex: 0.4 1;
   max-width: 140px;
   min-height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
+  grid-gap: 2px;
   gap: 2px;
+  border: none;
+  border-bottom: 2px solid green;
+  outline: none;
+  border-radius: 10px;
+  transition: color, background-color 500ms ease-in-out;
+}
+.addTask form button:hover {
+  background-color: green;
+  color: white;
 }

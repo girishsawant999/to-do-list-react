@@ -11,7 +11,7 @@ function addTask({ addTask }) {
     <div className="addTask">
       <form action="" onSubmit={formSubmit}>
         <input type="text" name="task" id="input_addTask" />
-        <button type="submit">
+        <button className="disable-select" type="submit">
           Add Task <span class="material-icons">add</span>
         </button>
       </form>
