@@ -23,6 +23,7 @@
 .addTask form button {
   font-family: 'Ubantu';
   font-weight: 600;
+  cursor: pointer;
   flex: 0.4 1;
   max-width: 140px;
   min-height: 30px;
