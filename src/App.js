@@ -25,7 +25,7 @@ function App() {
       merchantIdentifier
     );
     promise.then(function (canMakePayments) {
-      alert(canMakePayments);
+      alert(`App.js > canMakePayments ${canMakePayments}`);
       if (canMakePayments) {
         console.log('canMakePayments :>> ', true);
       } else {
