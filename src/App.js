@@ -12,6 +12,12 @@ function App() {
   );
 
   if (window.ApplePaySession) {
+
+    console.log('window.ApplePaySession.canMakePayments() :>> ', window.ApplePaySession.canMakePayments());
+    if(window.ApplePaySession.canMakePayments() ){
+      console.log('canMakePayments :>> ', true);
+    }
+
     var merchantIdentifier = 'merchant.com.lego.saudiblocks';
     var promise = window.ApplePaySession.canMakePaymentsWithActiveCard(
       merchantIdentifier
