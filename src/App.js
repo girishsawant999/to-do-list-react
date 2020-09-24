@@ -12,9 +12,11 @@ function App() {
   );
 
   if (window.ApplePaySession) {
-
-    console.log('window.ApplePaySession.canMakePayments() :>> ', window.ApplePaySession.canMakePayments());
-    if(window.ApplePaySession.canMakePayments() ){
+    console.log(
+      'window.ApplePaySession.canMakePayments() :>> ',
+      window.ApplePaySession.canMakePayments()
+    );
+    if (window.ApplePaySession.canMakePayments()) {
       console.log('canMakePayments :>> ', true);
     }
 
@@ -23,6 +25,7 @@ function App() {
       merchantIdentifier
     );
     promise.then(function (canMakePayments) {
+      alert(canMakePayments);
       if (canMakePayments) {
         console.log('canMakePayments :>> ', true);
       } else {
