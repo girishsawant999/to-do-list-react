@@ -3,6 +3,7 @@ import './App.css';
 import AddTask from './Components/AddTask';
 import Task from './Components/Task';
 import uuid from 'react-uuid';
+import { applePay, ApplePayStatusCodes, ApplePaySession } from 'braintree-web';
 
 function App() {
   const [tasks, settasks] = React.useState(
@@ -10,6 +11,21 @@ function App() {
       ? JSON.parse(localStorage.getItem('tasks'))
       : []
   );
+
+
+  if (window.ApplePaySession) {
+    var merchantIdentifier = 'merchant.com.lego.saudiblocks';
+    var promise = ApplePaySession.canMakePaymentsWithActiveCard(merchantIdentifier);
+    promise.then(function (canMakePayments) {
+     if (canMakePayments) {
+      console.log('canMakePayments :>> ', true);
+     } else {   
+      console.log('canMakePayments :>> ', false);
+     }
+   }); 
+ } else {
+   console.log('window.ApplePaySession :>> ', window.ApplePaySession);
+ }
 
   const addTask = (task) => {
     let new_task = [
