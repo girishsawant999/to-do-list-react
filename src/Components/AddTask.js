@@ -4,7 +4,8 @@ import './addTask.css';
 function addTask({ addTask }) {
   const formSubmit = (e) => {
     e.preventDefault();
-    if (e.target.task.value.match(/^(?!\s*$).+/g)) {
+    const re = /^(?!\s*$).+/g;
+    if (re.test(e.target.task.value)) {
       addTask(e.target.task.value);
       e.target.task.value = '';
     }
