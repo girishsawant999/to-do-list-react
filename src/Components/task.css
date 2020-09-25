@@ -32,4 +32,5 @@
 }
 .task__hr {
   width: 90vw;
+  border-top-color: #0080009e;
 }
