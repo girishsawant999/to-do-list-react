@@ -13,14 +13,11 @@ function addTask({ addTask }) {
   return (
     <div className="addTask">
       <form action="" onSubmit={formSubmit}>
-        <input
-          type="text"
-          name="task"
-          id="input_addTask"
-          placeholder="Enter the task"
-          autoComplete="off"
-        />
-        <button className="disable-select" type="submit">
+        <input type="text" name="task" id="input_addTask" />
+        <button
+          className="disable-select"
+          type="submit"
+          onKeyDown={(event) => event.preventDefault()}>
           Add Task <span class="material-icons">add</span>
         </button>
       </form>
