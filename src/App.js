@@ -16,13 +16,13 @@ function App() {
       ...tasks,
       {
         id: uuid(),
-        value: task,
+        value: capitalizeFirstLetter(task),
         status: false,
       },
     ];
 
-    settasks(capitalizeFirstLetter(new_task));
-    localStorage.setItem('tasks', JSON.stringify(capitalizeFirstLetter(new_task)));
+    settasks(new_task);
+    localStorage.setItem('tasks', JSON.stringify(new_task));
   };
 
   const deleteTask = (id) => {
