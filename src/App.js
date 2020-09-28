@@ -21,8 +21,8 @@ function App() {
       },
     ];
 
-    settasks(new_task);
-    localStorage.setItem('tasks', JSON.stringify(new_task));
+    settasks(capitalizeFirstLetter(new_task));
+    localStorage.setItem('tasks', JSON.stringify(capitalizeFirstLetter(new_task)));
   };
 
   const deleteTask = (id) => {
@@ -41,6 +41,9 @@ function App() {
     settasks(new_task);
     localStorage.setItem('tasks', JSON.stringify(new_task));
   };
+
+  const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+
   return (
     <div className="App">
       <AddTask addTask={addTask} />
