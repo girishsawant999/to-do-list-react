@@ -42,7 +42,7 @@ function App() {
     localStorage.setItem('tasks', JSON.stringify(new_task));
   };
 
-  const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+  const capitalizeFirstLetter = (string) => (string.charAt(0).toUpperCase() + string.slice(1));
 
   return (
     <div className="App">
